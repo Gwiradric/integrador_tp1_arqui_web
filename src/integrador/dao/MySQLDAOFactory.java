@@ -19,7 +19,7 @@ public class MySQLDAOFactory extends DAOFactory {
 	
 	private Connection conn = null;
 	
-	private final String uri = "jdbc:mysql://localhost:3306/integrador";
+	private final String uri = "jdbc:mysql://localhost:3306/db_integrador";
 	
 	public MySQLDAOFactory(String usuario, String contraseña) throws SQLException {
 		// TODO Auto-generated constructor stub
