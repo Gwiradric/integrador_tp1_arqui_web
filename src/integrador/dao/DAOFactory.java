@@ -9,7 +9,6 @@ import integrador.interfaces.ProductoDAO;
 
 public abstract class DAOFactory {
 	public static final int MYSQL = 1;
-	public static final int DERBY = 2;
 	
 	public abstract ClienteDAO obtenerClienteDAO();
 	public abstract FacturaDAO obtenerFacturaDAO();
@@ -24,14 +23,6 @@ public abstract class DAOFactory {
 			try {
 				return new MySQLDAOFactory(usuario, clave);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		case DERBY:
-			try {
-				return new DERBYDAOFactory();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		default:

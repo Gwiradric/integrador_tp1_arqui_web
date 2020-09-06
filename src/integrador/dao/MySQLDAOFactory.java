@@ -22,14 +22,13 @@ public class MySQLDAOFactory extends DAOFactory {
 	private final String uri = "jdbc:mysql://localhost:3306/db_integrador";
 	
 	public MySQLDAOFactory(String usuario, String clave) throws SQLException {
-		// TODO Auto-generated constructor stub
+		// Se crea la conexion con los parametros y deshabilitacion de auto commit
 		this.conn = DriverManager.getConnection(uri, usuario, clave);
 		conn.setAutoCommit(false);
 	}
 	
 	@Override
 	public ClienteDAO obtenerClienteDAO() {
-		// TODO Auto-generated method stub
 		if (this.clientes == null)
 			return new MySQLClienteDAO(conn);
 		return clientes;
@@ -37,7 +36,6 @@ public class MySQLDAOFactory extends DAOFactory {
 
 	@Override
 	public FacturaDAO obtenerFacturaDAO() {
-		// TODO Auto-generated method stub
 		if (this.facturas == null)
 			return new MySQLFacturaDAO(conn);
 		return this.facturas;
@@ -45,7 +43,6 @@ public class MySQLDAOFactory extends DAOFactory {
 
 	@Override
 	public FacturaProductoDAO obtenerFacturaProductoDAO() {
-		// TODO Auto-generated method stub
 		if (this.facturasProductos == null)
 			return new MySQLFacturaProductoDAO(conn);
 		return this.facturasProductos;
@@ -53,7 +50,6 @@ public class MySQLDAOFactory extends DAOFactory {
 
 	@Override
 	public ProductoDAO obtenerProductoDAO() {
-		// TODO Auto-generated method stub
 		if (this.productos == null)
 			return new MySQLProductoDAO(conn);
 		return this.productos;
@@ -61,7 +57,6 @@ public class MySQLDAOFactory extends DAOFactory {
 
 	@Override
 	public void crearTablas() {
-		// TODO Auto-generated method stub
 		try {
 			
 		PreparedStatement ps = null;
@@ -132,7 +127,6 @@ public class MySQLDAOFactory extends DAOFactory {
 		ps6.close();
 		
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -15,35 +15,59 @@ import integrador.interfaces.ProductoDAO;
 public class Demo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		/*
 		 * Datos de la base de datos:
 		 * Nombre: db_integrador
 		 * Usuario: root (cambiarlo entre comillas)
 		 * Clave: password (cambiarlo entre comillas);
+		 * Java: JavaSE-11
+		 */
+		
+		/*
+		 * Elegir tipo de BD:
+		 * 1 - MySQL
+		 * 
 		 */
 		
 		DAOFactory fabrica = DAOFactory.obtenerDAOFactory(1, "root", "password");
 		
-//		fabrica.crearTablas();
+		/*
+		 * Creación de tablas
+		 */
+		
+		fabrica.crearTablas();
+		
+		/*
+		 * Accesso a los objetos encapsulados
+		 */
 		
 		ClienteDAO clientes = fabrica.obtenerClienteDAO();
 		ProductoDAO productos = fabrica.obtenerProductoDAO();
 		FacturaDAO facturas = fabrica.obtenerFacturaDAO();
 		FacturaProductoDAO facturasProducto = fabrica.obtenerFacturaProductoDAO();
 
-//		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
+		/*
+		 * Cargo la BD elegida con los archivos CSV
+		 */
+		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
+		
+		/*
+		 * Resolución del ejercicio 3
+		 */
 		
 		System.out.println("Producto que más recaudo: \n" + productos.obtenerProductoMasRecaudo());
 		
+		/*
+		 * Resolución del ejercicio 4
+		 */
 		System.out.println("Lista de Clientes por la facturacion: \n" + clientes.obtenerClientesPorFacturacion());
 
 	}
 
 	private static void cargarBD(DAOFactory fabrica, ClienteDAO clientes, ProductoDAO productos, FacturaDAO facturas,
 			FacturaProductoDAO facturasProducto) {
-		// TODO Auto-generated method stub
+		// Carga de la BD con los archivos CSV pasados por parametro
 		try {
 			CSVParser clientesCSV = CSVFormat.DEFAULT.withHeader().parse(new FileReader("csv/clientes.csv"));
 			clientes.agregarClientes(clientesCSV);
@@ -58,7 +82,6 @@ public class Demo {
 			facturasProducto.agregarFacturasProductos(facturasProductosCSV);	
 		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

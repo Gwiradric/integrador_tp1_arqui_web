@@ -62,6 +62,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 	}
 	
 	private ClienteDTO convertir(ResultSet rs) throws SQLException {
+		// Conversion del ResultSet al objeto
 		int idCliente = rs.getInt("idCliente");
 		String nombre = rs.getString("nombre");
 		String email = rs.getString("email");
@@ -70,7 +71,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 
 	@Override
 	public List<ClienteDTO> obtenerClientesPorFacturacion() {
-		// TODO Auto-generated method stub
+		// Obtengo los clientes
 		String sentencia = "select t1.idCliente, t1.nombre, t1.email, sum(t1.valorCompraProducto) as valorCompraTotal\n" + 
 				"from (\n" + 
 				"	select c.*, fp.cantidad * p.valor as valorCompraProducto\n" + 
