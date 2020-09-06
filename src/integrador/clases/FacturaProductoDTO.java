@@ -38,7 +38,7 @@ public class FacturaProductoDTO {
 
 	@Override
 	public String toString() {
-		return "FacturaProductoDTO [idFactura=" + idFactura + ", idProducto=" + idProducto + ", cantidad=" + cantidad
+		return "[idFactura=" + idFactura + ", idProducto=" + idProducto + ", cantidad=" + cantidad
 				+ "]";
 	}
 

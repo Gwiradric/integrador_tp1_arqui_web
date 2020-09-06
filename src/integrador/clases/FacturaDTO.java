@@ -20,6 +20,6 @@ public class FacturaDTO {
 
 	@Override
 	public String toString() {
-		return "FacturaDTO [idFactura=" + idFactura + ", idCliente=" + idCliente + "]";
+		return "[idFactura=" + idFactura + ", idCliente=" + idCliente + "]";
 	}
 }

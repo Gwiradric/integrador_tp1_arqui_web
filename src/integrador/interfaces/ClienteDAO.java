@@ -14,5 +14,5 @@ public interface ClienteDAO {
 	
 	public void agregarClientes(CSVParser c);
 	
-	public List<ClienteDTO> obtenerClientes();
+	public List<ClienteDTO> obtenerClientesPorFacturacion();
 }

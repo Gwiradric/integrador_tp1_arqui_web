@@ -19,7 +19,7 @@ public class Demo {
 		
 		/*
 		 * Datos de la base de datos:
-		 * Nombre: integrador
+		 * Nombre: db_integrador
 		 * Usuario: root (cambiarlo entre comillas)
 		 * Clave: password (cambiarlo entre comillas);
 		 */
@@ -35,7 +35,9 @@ public class Demo {
 
 		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
 		
-		System.out.println("Producto que más recaudo:" + productos.obtenerProductoMasRecaudo());
+		System.out.println("Producto que más recaudo: \n" + productos.obtenerProductoMasRecaudo());
+		
+		System.out.println("Lista de Clientes por la facturacion: \n" + clientes.obtenerClientesPorFacturacion());
 
 	}
 

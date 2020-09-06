@@ -34,7 +34,7 @@ public class ProductoDTO {
 
 	@Override
 	public String toString() {
-		return "ProductoDTO [idProducto=" + idProducto + ", nombre=" + nombre + ", valor=" + valor + "]";
+		return "[idProducto=" + idProducto + ", nombre=" + nombre + ", valor=" + valor + "]";
 	}
 	
 }
