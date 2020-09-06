@@ -64,7 +64,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 	private ClienteDTO convertir(ResultSet rs) throws SQLException {
 		int idCliente = rs.getInt("idCliente");
 		String nombre = rs.getString("nombre");
-		String email = rs.getNString("email");
+		String email = rs.getString("email");
 		return new ClienteDTO(idCliente, nombre, email);
 	}
 

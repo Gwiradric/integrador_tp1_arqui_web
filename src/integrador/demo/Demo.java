@@ -26,14 +26,14 @@ public class Demo {
 		
 		DAOFactory fabrica = DAOFactory.obtenerDAOFactory(1, "root", "password");
 		
-		fabrica.crearTablas();
+//		fabrica.crearTablas();
 		
 		ClienteDAO clientes = fabrica.obtenerClienteDAO();
 		ProductoDAO productos = fabrica.obtenerProductoDAO();
 		FacturaDAO facturas = fabrica.obtenerFacturaDAO();
 		FacturaProductoDAO facturasProducto = fabrica.obtenerFacturaProductoDAO();
 
-		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
+//		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
 		
 		System.out.println("Producto que más recaudo: \n" + productos.obtenerProductoMasRecaudo());
 		

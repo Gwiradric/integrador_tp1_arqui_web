@@ -18,7 +18,7 @@ public class DERBYDAOFactory extends DAOFactory {
 	
 	protected Connection conn = null;
 	
-	final private String uri = "jdbc:derby:integrador;create=true";
+	final private String uri = "jdbc:derby:db_integrador;create=true";
 	
 	public DERBYDAOFactory() throws SQLException {
 		// TODO Auto-generated constructor stub

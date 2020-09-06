@@ -21,9 +21,9 @@ public class MySQLDAOFactory extends DAOFactory {
 	
 	private final String uri = "jdbc:mysql://localhost:3306/db_integrador";
 	
-	public MySQLDAOFactory(String usuario, String contraseña) throws SQLException {
+	public MySQLDAOFactory(String usuario, String clave) throws SQLException {
 		// TODO Auto-generated constructor stub
-		this.conn = DriverManager.getConnection(uri, usuario, contraseña);
+		this.conn = DriverManager.getConnection(uri, usuario, clave);
 		conn.setAutoCommit(false);
 	}
 	
