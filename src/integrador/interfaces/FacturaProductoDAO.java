@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.commons.csv.CSVParser;
 
-import integrador.beans.FacturaProductoDTO;
+import integrador.clases.FacturaProductoDTO;
 
 public interface FacturaProductoDAO {
 	

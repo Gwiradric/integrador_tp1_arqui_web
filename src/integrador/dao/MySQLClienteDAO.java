@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-import integrador.beans.ClienteDTO;
+import integrador.clases.ClienteDTO;
 import integrador.interfaces.ClienteDAO;
 
 public class MySQLClienteDAO implements ClienteDAO {

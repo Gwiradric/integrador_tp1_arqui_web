@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-import integrador.beans.FacturaProductoDTO;
+import integrador.clases.FacturaProductoDTO;
 import integrador.interfaces.FacturaProductoDAO;
 
 public class MySQLFacturaProductoDAO implements FacturaProductoDAO {

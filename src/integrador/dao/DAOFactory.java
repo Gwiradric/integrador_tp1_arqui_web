@@ -1,6 +1,5 @@
 package integrador.dao;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import integrador.interfaces.ClienteDAO;

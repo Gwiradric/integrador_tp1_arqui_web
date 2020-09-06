@@ -1,4 +1,4 @@
-package integrador.beans;
+package integrador.clases;
 
 public class ClienteDTO {
 	private int idCliente;

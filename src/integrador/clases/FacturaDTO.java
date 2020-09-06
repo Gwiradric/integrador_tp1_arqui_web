@@ -1,4 +1,4 @@
-package integrador.beans;
+package integrador.clases;
 
 public class FacturaDTO {
 	private int idFactura;

@@ -6,31 +6,37 @@ import java.io.IOException;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 
-import integrador.beans.ClienteDTO;
-import integrador.beans.FacturaDTO;
-import integrador.beans.FacturaProductoDTO;
-import integrador.beans.ProductoDTO;
 import integrador.dao.DAOFactory;
 import integrador.interfaces.ClienteDAO;
 import integrador.interfaces.FacturaDAO;
 import integrador.interfaces.FacturaProductoDAO;
 import integrador.interfaces.ProductoDAO;
 
-public class Main {
+public class Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		/*
+		 * Datos de la base de datos:
+		 * Nombre: integrador
+		 * Usuario: root (cambiarlo entre comillas)
+		 * Clave: password (cambiarlo entre comillas);
+		 */
+		
 		DAOFactory fabrica = DAOFactory.obtenerDAOFactory(1, "root", "password");
 		
-		fabrica.crearTablas();
+//		fabrica.crearTablas();
 		
 		ClienteDAO clientes = fabrica.obtenerClienteDAO();
 		ProductoDAO productos = fabrica.obtenerProductoDAO();
 		FacturaDAO facturas = fabrica.obtenerFacturaDAO();
 		FacturaProductoDAO facturasProducto = fabrica.obtenerFacturaProductoDAO();
 
-		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
+//		cargarBD(fabrica, clientes, productos, facturas, facturasProducto);
 		
+		System.out.println("Producto que más recaudo:" + productos.obtenerProductoMasRecaudo());
+
 	}
 
 	private static void cargarBD(DAOFactory fabrica, ClienteDAO clientes, ProductoDAO productos, FacturaDAO facturas,

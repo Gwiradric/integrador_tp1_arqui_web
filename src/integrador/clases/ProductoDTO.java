@@ -1,4 +1,4 @@
-package integrador.beans;
+package integrador.clases;
 
 public class ProductoDTO {
 	private int idProducto;
@@ -30,6 +30,11 @@ public class ProductoDTO {
 
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductoDTO [idProducto=" + idProducto + ", nombre=" + nombre + ", valor=" + valor + "]";
 	}
 	
 }
